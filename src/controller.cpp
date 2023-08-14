@@ -17,8 +17,23 @@ void Controller::moveLeft() {
 }
 
 void Controller::HandleEvent(const SDL_Event& event) {
+    auto position = monster_.GetPosition();
     if (event.type == SDL_KEYDOWN) {
         auto key = event.key.keysym.scancode;
+        acceptKey(key);
+        
+    }
+}
+
+void Controller::Update() {
+    if (keyRemainsTime_ > 0) {
+        keyRemainsTime_ --;
+    }
+
+    auto position = monster_.GetPosition();
+    auto offsetedPos = position;
+    if (int(offsetedPos.x) % 32 == 0 && int(offsetedPos.y) % 32 == 0) {
+        auto key = consume();
         if (key == SDL_SCANCODE_A) {
             moveLeft();
         }

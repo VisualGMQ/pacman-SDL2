@@ -18,20 +18,31 @@ enum class ImageTileType {
 };
 
 // NOTE: edit your map here
+// constexpr std::string_view MapDesc =
+// "WWWWWWWWWW"
+// "WBBBBBBBBW"
+// "WWBWGWBWWW"
+// "WPBW WBWPW"
+// "WPBWWWBWPW"
+// "WWBBBBBBBW"
+// "WWBBBBBBBW"
+// "WWBBBBBBBW"
+// "WWBBBBBBBW"
+// "WWBBBBBBBW"
+// "WWBBBBBBBW"
+// "WWBBBBBBBW"
+// "WWWWWWWWWW";
 constexpr std::string_view MapDesc =
-"WWWWWWWWWW"
-"WBBBBBBBBW"
-"WWBWGWBWWW"
-"WPBW WBWPW"
-"WPBWWWBWPW"
-"WWBBBBBBBW"
-"WWBBBBBBBW"
-"WWBBBBBBBW"
-"WWBBBBBBBW"
-"WWBBBBBBBW"
-"WWBBBBBBBW"
-"WWBBBBBBBW"
-"WWWWWWWWWW";
+"WWWWW"
+"WBWWW"
+"WBBBW"
+"WBWBW"
+"WBBBW"
+"WBWWW"
+"WWWWW";
 
-constexpr int MapWidth = 10;
-constexpr int MapHeight = 13;
+// constexpr int MapWidth = 10;
+// constexpr int MapHeight = 13;
+
+constexpr int MapWidth = 5;
+constexpr int MapHeight = 7;

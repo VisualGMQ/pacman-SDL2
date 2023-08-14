@@ -25,6 +25,14 @@ struct Vector2 final {
         this->y = y;
     }
 
+    bool operator==(const Vector2& o) const {
+        return this->x == o.x && this->y == o.y;
+    }
+
+    bool operator!=(const Vector2& o) const {
+        return !(*this == o);
+    }
+
     Vector2 operator+(const Vector2& o) const {
         return Vector2{o.x + x, o.y + y };
     }

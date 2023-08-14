@@ -13,11 +13,19 @@ struct Tile final {
     Type type = Type::Emtpy;
 };
 
+inline bool CanWalk(Tile::Type type) {
+    return !(type == Tile::Type::Wall || type == Tile::Type::GhostDoor);
+}
+
 class Map final {
 public:
     Map(std::string_view desc, const Size& size);
 
     const Tile& GetTile(int x, int y) const {
+        return tiles_->Get(x, y);
+    }
+
+    Tile& GetTile(int x, int y) {
         return tiles_->Get(x, y);
     }
 

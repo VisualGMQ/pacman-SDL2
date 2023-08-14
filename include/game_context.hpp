@@ -3,6 +3,7 @@
 #include "map.hpp"
 #include "monster.hpp"
 #include "controller.hpp"
+#include "find_path.hpp"
 
 class GameContext final: public Singlton<GameContext> {
 public:
@@ -25,6 +26,8 @@ public:
 private:
     bool shouldClose_ = false;
     SDL_Event event_;
+    int score_ = 0;
 
     void dealCollideWithMap(Monster& monster);
+    void tryEatBean(const Vector2& playerPosition);
 };

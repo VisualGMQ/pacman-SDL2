@@ -11,7 +11,7 @@ struct Monster final {
 
     Direction dir = Direction::Up;
     Image image;
-    float speed = 5;
+    float speed = 4;
 
     void Move(const Vector2& offset) {
         offset_ = offset;

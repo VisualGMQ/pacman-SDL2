@@ -7,6 +7,7 @@
 #include <random>
 #include <iostream>
 #include <optional>
+#include <array>
 #include <string_view>
 #include "vmath.hpp"
 #include "singlton.hpp"
