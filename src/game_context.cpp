@@ -60,23 +60,30 @@ void GameContext::Update() {
         dealCollideWithMap(monster);
     }
 
-    /* Test codes for path finding
+    //  Test codes for path finding
     Matrix<VisitRecord> recordMap(gameMap->Width(), gameMap->Height());
     auto startGrid = Vector2(1, 1);
-    // auto targetGrid = Vector2(7, 9);
-    auto targetGrid = Vector2(1, 5);
+    recordMap.Get(startGrid.x, startGrid.y).visited = true;
+    auto targetGrid = Vector2(6, 9);
+    // auto targetGrid = Vector2(1, 5);
+    int count = 114514;
+    static std::vector<Vector2> path;
+    static auto find = false;
 
-    if (FindShortestPath(recordMap, *gameMap, Vector2{-1, -1}, startGrid, targetGrid)) {
-        // std::cout << recordMap.Get(targetGrid.x, targetGrid.y).count << std::endl;
-        // std::cout << recordMap.Get(startGrid.x, startGrid.y).count << std::endl;
-        Vector2 pos = targetGrid;
-        while (pos != targetGrid) {
-            auto& renderer = Context::Inst().GetRenderer();
-            renderer.SetColor({0, 255, 0, 255});
-            renderer.DrawRect({int(pos.x * 32), int(pos.y * 32), 16, 16});
-
-            pos = recordMap.Get(pos.x, pos.y).prev;
+    if (!find) {
+        find = FindShortestPath(recordMap, *gameMap, Vector2{-1, -1}, startGrid,
+                                targetGrid, count, path);
+        // std::cout << "path.size = " << path.size() << std::endl;
+        // for (auto& grid : path) {
+        //     std::cout << grid.x << ", " << grid.y << std::endl;
+        // }
+    } else {
+        auto& renderer = Context::Inst().GetRenderer();
+        renderer.SetColor({0, 255, 0, 255});
+        for (auto& grid : path) {
+            // ! DrawRect可能不会生效，因为main中先update在draw，会被覆盖
+            // ! 这里能显示部分路径恰好是因为豆子有部分地方没有颜色
+            renderer.DrawRect({int(grid.x * 32), int(grid.y * 32), 16, 16});
         }
     }
-    */
 }
