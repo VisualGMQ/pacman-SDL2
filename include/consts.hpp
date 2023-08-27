@@ -19,30 +19,45 @@ enum class ImageTileType {
 
 // NOTE: edit your map here
 // constexpr std::string_view MapDesc =
-// "WWWWWWWWWW"
-// "WBBBBBBBBW"
-// "WWBWGWBWWW"
-// "WPBW WBWPW"
-// "WPBWWWBWPW"
-// "WWBBBBBBBW"
-// "WWBBBBBBBW"
-// "WWBBBBBBBW"
-// "WWBBBBBBBW"
-// "WWBBBBBBBW"
-// "WWBBBBBBBW"
-// "WWBBBBBBBW"
-// "WWWWWWWWWW";
+//     "WWWWWWWWWW"
+//     "WBBBBBBBBW"
+//     "WWBWGWBWWW"
+//     "WPBWWWBWPW"
+//     "WPBWWWBWPW"
+//     "WWBBBBBBBW"
+//     "WWBBBBBBBW"
+//     "WWBBBBBBBW"
+//     "WWBBBBBBBW"
+//     "WWBBBBBBBW"
+//     "WWBBBBBBBW"
+//     "WWBBBBBBBW"
+//     "WWWWWWWWWW";
+// for dfs test
 constexpr std::string_view MapDesc =
-"WWWWW"
-"WBWWW"
-"WBBBW"
-"WBWBW"
-"WBBBW"
-"WBWWW"
-"WWWWW";
+    "WWWWWWWWWW"
+    "WBBBBBBBBW"
+    "WWBWGWBWWW"
+    "WPBWWWBWPW"
+    "WPBWWWBWPW"
+    "WWBBBBBBBW"
+    "WWBBBBBBBW"
+    "WWBBBBBWBW"
+    "WWBBBWWWBW"
+    "WWBBBWBBBW"
+    "WWBBBBBBBW"
+    "WWBBBBBBBW"
+    "WWWWWWWWWW";
+// constexpr std::string_view MapDesc =
+// "WWWWW"
+// "WBWWW"
+// "WBBBW"
+// "WBWBW"
+// "WBBBW"
+// "WBWWW"
+// "WWWWW";
 
-// constexpr int MapWidth = 10;
-// constexpr int MapHeight = 13;
+constexpr int MapWidth = 10;
+constexpr int MapHeight = 13;
 
-constexpr int MapWidth = 5;
-constexpr int MapHeight = 7;
+// constexpr int MapWidth = 5;
+// constexpr int MapHeight = 7;
